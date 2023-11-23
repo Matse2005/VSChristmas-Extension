@@ -1,0 +1,65 @@
+{
+  "name": "vschristmas-extension",
+  "displayName": "VSChristmas Extension",
+  "description": "Test extensions",
+  "publisher": "MatseVH",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.84.0"
+  },
+  "icon": "./assets/icon.png",
+  "l10n": "./l10n",
+  "author": {
+    "name": "MatseVH"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "*"
+  ],
+  "pricing": "Free",
+  "main": "./extension.js",
+  "contributes": {
+    "configuration": {
+      "title": "VSChristmas",
+      "properties": {
+        "VSChristmas.activateStatusBarItem": {
+          "type": "boolean",
+          "default": true,
+          "description": "Enable/Disable a Christmas button in de right corner of your VSCode"
+        }
+      }
+    },
+    "commands": [
+      {
+        "command": "VSChristmas.daysLeft",
+        "title": "%VSChristmas.daysLeft.title%"
+      }
+    ],
+    "icons": {
+      "hat-santa": {
+        "description": "Santa Hat Icon",
+        "default": {
+          "fontPath": "./assets/icon-font.woff",
+          "fontCharacter": "\\41"
+        }
+      }
+    },
+    "scripts": {
+      "lint": "eslint .",
+      "pretest": "npm run lint",
+      "test": "node ./test/runTest.js"
+    },
+    "devDependencies": {
+      "@types/vscode": "^1.84.0",
+      "@types/mocha": "^10.0.3",
+      "@types/node": "18.x",
+      "eslint": "^8.52.0",
+      "glob": "^10.3.10",
+      "mocha": "^10.2.0",
+      "typescript": "^5.2.2",
+      "@vscode/test-electron": "^2.3.6"
+    }
+  }
+}
