@@ -3,6 +3,9 @@
   "displayName": "VSChristmas Extension",
   "description": "Test extensions",
   "publisher": "MatseVH",
+  "repository": {
+    "url": "https://github.com/Matse2005/VSChristmas-Extension"
+  },
   "version": "0.0.1",
   "engines": {
     "vscode": "^1.84.0"
