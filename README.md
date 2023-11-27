@@ -2,7 +2,9 @@
 
 ## Features
 
-- Easy find out how many days left until Christmas from inside your VSCode
+- `Days Until Christmas` Command
+- Status bar button to show the days until Christmas
+- Keybind `ctrl+shift+c` or `shift+cmd+c` on mac to show the days until Christmas
 
 <!--
 \!\[feature X\]\(images/feature-x.png\)
@@ -21,8 +23,20 @@ Calling out known issues can help limit users opening duplicate issues against y
 
 ## Release Notes
 
-Users appreciate release notes as you update your extension.
-
 ### 0.0.1
 
-Initial release of Christmas
+Initial release of VSChristmas
+
+### 0.0.2
+
+Fixed a few sentences
+
+### 0.0.3
+
+Moved from Javascript to Typescript
+
+### 0.0.4
+
+Added new features:
+
+- Get the days left via a keybind
