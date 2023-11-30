@@ -41,7 +41,6 @@ Moved from Javascript to Typescript
 Added new features:
 
 - Get the days left via a keybind
-  <<<<<<< HEAD
 
 ### 0.0.5
 
