@@ -1,19 +1,18 @@
 {
   "name": "vschristmas-extension",
-  "displayName": "VSChristmas Extension",
-  "description": "Test extensions",
+  "displayName": "VSChristmas-Extension",
+  "description": "Funny Christmas features in your VSCode",
   "publisher": "MatseVH",
   "repository": {
     "url": "https://github.com/Matse2005/VSChristmas-Extension"
   },
-  "version": "0.0.1",
-  "engines": {
-    "vscode": "^1.84.0"
-  },
+  "version": "0.0.5",
   "icon": "./assets/icon.png",
-  "l10n": "./l10n",
   "author": {
     "name": "MatseVH"
+  },
+  "engines": {
+    "vscode": "^1.84.0"
   },
   "categories": [
     "Other"
@@ -21,8 +20,7 @@
   "activationEvents": [
     "*"
   ],
-  "pricing": "Free",
-  "main": "./extension.js",
+  "main": "./out/extension.js",
   "contributes": {
     "configuration": {
       "title": "VSChristmas",
@@ -31,38 +29,73 @@
           "type": "boolean",
           "default": true,
           "description": "Enable/Disable a Christmas button in de right corner of your VSCode"
+        },
+        "VSChristmas.toggleLargeStatusBarText": {
+          "type": "boolean",
+          "default": true,
+          "description": "Toggle the text beside the icon for the status bar icon."
         }
       }
     },
+    "keybindings": [
+      {
+        "command": "VSChristmas.daysLeft",
+        "key": "ctrl+shift+c",
+        "mac": "shift+cmd+c"
+      }
+    ],
+    "customEditors": [
+      {
+        "viewType": "christmas.christmas",
+        "displayName": "Christmas",
+        "selector": [
+          {
+            "filenamePattern": "*.christmas"
+          },
+          {
+            "filenamePattern": "*.xmas"
+          }
+        ],
+        "priority": "default"
+      }
+    ],
     "commands": [
       {
         "command": "VSChristmas.daysLeft",
-        "title": "%VSChristmas.daysLeft.title%"
+        "title": "Days Until Christmas"
       }
     ],
     "icons": {
       "hat-santa": {
         "description": "Santa Hat Icon",
         "default": {
-          "fontPath": "./assets/icon-font.woff",
+          "fontPath": "src/assets/icon-font.woff",
           "fontCharacter": "\\41"
         }
       }
-    },
-    "scripts": {
-      "lint": "eslint .",
-      "pretest": "npm run lint",
-      "test": "node ./test/runTest.js"
-    },
-    "devDependencies": {
-      "@types/vscode": "^1.84.0",
-      "@types/mocha": "^10.0.3",
-      "@types/node": "18.x",
-      "eslint": "^8.52.0",
-      "glob": "^10.3.10",
-      "mocha": "^10.2.0",
-      "typescript": "^5.2.2",
-      "@vscode/test-electron": "^2.3.6"
     }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint src --ext ts",
+    "test": "node ./out/test/runTest.js"
+  },
+  "devDependencies": {
+    "@types/mocha": "^10.0.3",
+    "@types/node": "18.x",
+    "@types/vscode": "^1.84.0",
+    "@typescript-eslint/eslint-plugin": "^6.9.0",
+    "@typescript-eslint/parser": "^6.9.0",
+    "@vscode/test-electron": "^2.3.6",
+    "eslint": "^8.52.0",
+    "glob": "^10.3.10",
+    "mocha": "^10.2.0",
+    "typescript": "^5.2.2"
+  },
+  "dependencies": {
+    "@vscode/webview-ui-toolkit": "^1.3.1"
   }
 }
