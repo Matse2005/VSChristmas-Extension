@@ -69,7 +69,7 @@
       "hat-santa": {
         "description": "Santa Hat Icon",
         "default": {
-          "fontPath": "src/assets/icon-font.woff",
+          "fontPath": "assets/icon-font.woff",
           "fontCharacter": "\\41"
         }
       }
