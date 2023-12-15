@@ -1,4 +1,5 @@
 import * as christmas from './christmas';
+import * as globals from './globals.json';
 import * as year from './year';
 
 type Duration = [string, number][];
@@ -20,7 +21,7 @@ export function visible(from: string) {
   if(christmas.daysLeft() >= year.getDaysInCurrentYear() - 5) {
     return true;
   }
-  
+
   return isBetween;
 }
 
@@ -33,7 +34,7 @@ function isBetweenDates(dateToCheck: Date, duration: string): boolean {
 
   const days = selectedDuration[1];
   const today = dateToCheck;
-  const christmasDate = new Date(today.getFullYear(), 11, 25); // Set Christmas date
+  const christmasDate = new Date(today.getFullYear(), globals.christmas.month, globals.christmas.day); // Set Christmas date
 
   const startDate = new Date(christmasDate);
 

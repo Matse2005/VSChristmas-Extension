@@ -17,6 +17,7 @@ This extension contributes the following settings:
 
 - `VSChristmas.StatusBarItemLocation`: Display the Christmas button at the location of your choice.
 - `VSChristmas.toggleLargeStatusBarText`: Toggle the text beside the icon for the status bar icon.
+- `VSChristmas.StatusBarButtonVisibleTimeBeforeChistmas`: Make the Christmas button show up on a specific time before Christmas
 
 <!-- ## Known Issues
 
@@ -24,23 +25,19 @@ Calling out known issues can help limit users opening duplicate issues against y
 
 ## Release Notes
 
-### 0.0.1
+### 0.0.8
 
-Initial release of VSChristmas
+- Added the VSChristmas.StatusBarButtonVisibleTimeBeforeChistmas setting
+- Changed a few functionalities
+- Changed the order of the release notes in the readme
 
-### 0.0.2
+### 0.0.7
 
-Fixed a few sentences
+- Added esbuild as a bundler
 
-### 0.0.3
+### 0.0.6
 
-Moved from Javascript to Typescript
-
-### 0.0.4
-
-Added new features:
-
-- Get the days left via a keybind
+- Changed the way you can disable and enable the location of the Christmas button, you can now chose to disable, the location to show or show it on the left and right.
 
 ### 0.0.5
 
@@ -50,10 +47,20 @@ Added new features:
 - Toogle the text on the statusbar items
 - Changed a few typos
 
-### 0.0.6
+### 0.0.4
 
-- Changed the way you can disable and enable the location of the Christmas button, you can now chose to disable, the location to show or show it on the left and right.
+Added new features:
 
-### 0.0.7
+- Get the days left via a keybind
 
-- Added esbuild as a bundler
+### 0.0.3
+
+Moved from Javascript to Typescript
+
+### 0.0.2
+
+Fixed a few sentences
+
+### 0.0.1
+
+Initial release of VSChristmas

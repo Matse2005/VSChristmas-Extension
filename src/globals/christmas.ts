@@ -1,12 +1,14 @@
+import * as globals from './globals.json';
+
 export function daysLeft() {
   // Get the current date
   var today = new Date();
 
   // Create a Date object for Christmas of the current year
-  let cmas: Date = new Date(today.getFullYear(), 11, 25);
+  let cmas: Date = new Date(today.getFullYear(), globals.christmas.month, globals.christmas.day);
 
   // Check if the current date is after December 25th
-  if (today.getMonth() === 11 && today.getDate() > 25) {
+  if (today.getMonth() === globals.christmas.month && today.getDate() > globals.christmas.day) {
     // If true, set Christmas for the next year
     cmas.setFullYear(cmas.getFullYear() + 1);
   }

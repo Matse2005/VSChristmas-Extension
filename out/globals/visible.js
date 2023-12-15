@@ -25,6 +25,7 @@ var __importStar = (this && this.__importStar) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.visible = void 0;
 const christmas = __importStar(require("./christmas"));
+const globals = __importStar(require("./globals.json"));
 const year = __importStar(require("./year"));
 const durations = [
     ['1 day', 1],
@@ -52,7 +53,7 @@ function isBetweenDates(dateToCheck, duration) {
     }
     const days = selectedDuration[1];
     const today = dateToCheck;
-    const christmasDate = new Date(today.getFullYear(), 11, 25); // Set Christmas date
+    const christmasDate = new Date(today.getFullYear(), globals.christmas.month, globals.christmas.day); // Set Christmas date
     const startDate = new Date(christmasDate);
     switch (days) {
         case 1:
