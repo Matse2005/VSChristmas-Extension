@@ -26,10 +26,23 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.daysLeft = void 0;
 const vscode = __importStar(require("vscode"));
 const christmas = __importStar(require("./globals/christmas"));
+const year = __importStar(require("./globals/year"));
 function daysLeft() {
     let id = "VSChristmas.daysLeft";
     let command = vscode.commands.registerCommand(id, function () {
-        vscode.window.showInformationMessage(christmas.daysLeft() + " days left until Christmas! 🎅");
+        let message = "";
+        if (christmas.daysLeft() === 0) {
+            message = "Ho Ho Ho, Merry Christmas! 🎅";
+        }
+        else if (christmas.daysLeft() >= year.getDaysInCurrentYear() - 5) {
+            let days = year.getDaysInCurrentYear() + 1 - christmas.daysLeft();
+            message = "Christmas was " + days + " day" + (days === 1 ? '' : 's') + " ago! 🎅";
+        }
+        else {
+            let days = christmas.daysLeft();
+            message = days + " day" + (days === 1 ? '' : 's') + " left until Christmas! 🎅";
+        }
+        vscode.window.showInformationMessage(message);
     });
     return {
         "command": command,

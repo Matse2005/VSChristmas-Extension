@@ -1,5 +1,11 @@
 import * as vscode from 'vscode';
 import { daysLeft } from './commands';
+import * as statusbar from './globals/visible';
+
+let statusBarText: any = {
+  'large': "$(hat-santa) Christmas",
+  'short': "$(hat-santa)"
+};
 
 let statusBarLeft: vscode.StatusBarItem;
 let statusBarRight: vscode.StatusBarItem;
@@ -12,28 +18,10 @@ export function activate(context: vscode.ExtensionContext) {
 
 	context.subscriptions.push(daysLeftCommand['command']);
 
-  // Status bar item right
-	statusBarRight = vscode.window.createStatusBarItem(
-    vscode.StatusBarAlignment.Right,
-    100
-  );
-
-  statusBarRight.text = `$(hat-santa) Christmas`;
-  statusBarRight.tooltip = `Shows the days until Christmas.`;
-	statusBarRight.command = daysLeftCommand['id'];
+  statusBarRight = statusBarItem(daysLeftCommand['id']);
+  statusBarLeft = statusBarItem(daysLeftCommand['id'], vscode.StatusBarAlignment.Left);
 
 	context.subscriptions.push(statusBarRight);
-
-  // Status bar item left
-	statusBarLeft = vscode.window.createStatusBarItem(
-    vscode.StatusBarAlignment.Left,
-    100
-  );
-
-  statusBarLeft.text = `$(hat-santa) Christmas`;
-  statusBarLeft.tooltip = `Shows the days until Christmas.`;
-	statusBarLeft.command = daysLeftCommand['id'];
-
 	context.subscriptions.push(statusBarLeft);
 
   vscode.workspace.onDidChangeConfiguration((event) => {
@@ -44,21 +32,56 @@ export function activate(context: vscode.ExtensionContext) {
 }
 
 function statusBarSetting(): void {
-  if(vscode.workspace.getConfiguration("VSChristmas").activateStatusBarItem) {
-    statusBarRight.show();
-    statusBarLeft.show();
+  let location: string = vscode.workspace.getConfiguration("VSChristmas").StatusBarItemLocation;
+  let text: boolean = vscode.workspace.getConfiguration("VSChristmas").toggleLargeStatusBarText;
+  let before: string = vscode.workspace.getConfiguration("VSChristmas").StatusBarButtonVisibleTimeBeforeChistmas;
+
+  if(text) {
+    statusBarRight.text = statusBarText['large'];
+    statusBarLeft.text = statusBarText['large'];
+  }else{
+    statusBarRight.text = statusBarText['short'];
+    statusBarLeft.text = statusBarText['short'];
+  }
+
+  if(statusbar.visible(before)) {
+    if(location !== "None") {
+      if(location !== "Both") {
+        if(location !== 'Right') {
+          statusBarRight.hide();
+          statusBarLeft.show();
+        }else{
+          statusBarRight.show();
+          statusBarLeft.hide();
+        }
+      }else{
+        statusBarRight.show();
+        statusBarLeft.show();
+      }
+    }else{
+      statusBarRight.hide();
+      statusBarLeft.hide();
+    }
   }else{
     statusBarRight.hide();
     statusBarLeft.hide();
   }
+}
 
-  if(vscode.workspace.getConfiguration("VSChristmas").toggleLargeStatusBarText) {
-    statusBarRight.text = `$(hat-santa) Christmas`;
-    statusBarLeft.text = `$(hat-santa) Christmas`;
-  }else{
-    statusBarRight.text = `$(hat-santa)`;
-    statusBarLeft.text = `$(hat-santa)`;
-  }
+function statusBarItem(id: string, alignment: vscode.StatusBarAlignment = vscode.StatusBarAlignment.Right, tooltip: string = "Shows the days until Christmas.", text: string = statusBarText['large'], priority: number = 100): vscode.StatusBarItem 
+{
+  let statusBar: vscode.StatusBarItem;
+
+  statusBar = vscode.window.createStatusBarItem(
+    alignment,
+    priority
+  );
+
+  statusBar.text = text;
+  statusBar.tooltip = tooltip;
+	statusBar.command = id;
+
+  return statusBar;
 }
 
 // This method is called when your extension is deactivated

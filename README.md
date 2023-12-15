@@ -15,7 +15,7 @@
 
 This extension contributes the following settings:
 
-- `VSChristmas.activateStatusBarItem`: Enable/Disable a Christmas button in the right and left corner of your VSCode.
+- `VSChristmas.StatusBarItemLocation`: Display the Christmas button at the location of your choice.
 - `VSChristmas.toggleLargeStatusBarText`: Toggle the text beside the icon for the status bar icon.
 
 <!-- ## Known Issues
@@ -49,3 +49,11 @@ Added new features:
 - Added a statusbar item on the left
 - Toogle the text on the statusbar items
 - Changed a few typos
+
+### 0.0.6
+
+- Changed the way you can disable and enable the location of the Christmas button, you can now chose to disable, the location to show or show it on the left and right.
+
+### 0.0.7
+
+- Added esbuild as a bundler

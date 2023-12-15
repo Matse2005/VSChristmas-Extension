@@ -6,7 +6,7 @@
   "repository": {
     "url": "https://github.com/Matse2005/VSChristmas-Extension"
   },
-  "version": "0.0.5",
+  "version": "0.0.7",
   "icon": "./assets/icon.png",
   "author": {
     "name": "MatseVH"
@@ -18,22 +18,42 @@
     "Other"
   ],
   "activationEvents": [
-    "*"
+    "onStartupFinished"
   ],
   "main": "./out/extension.js",
   "contributes": {
     "configuration": {
       "title": "VSChristmas",
       "properties": {
-        "VSChristmas.activateStatusBarItem": {
-          "type": "boolean",
-          "default": true,
-          "description": "Enable/Disable a Christmas button in de right corner of your VSCode"
-        },
         "VSChristmas.toggleLargeStatusBarText": {
           "type": "boolean",
           "default": true,
           "description": "Toggle the text beside the icon for the status bar icon."
+        },
+        "VSChristmas.StatusBarItemLocation": {
+          "type": "string",
+          "default": "Right",
+          "enum": [
+            "Right",
+            "Left",
+            "Both",
+            "None"
+          ],
+          "description": "Display the Christmas button at the location of your choice."
+        },
+        "VSChristmas.StatusBarButtonVisibleTimeBeforeChistmas": {
+          "type": "string",
+          "default": "1 month",
+          "enum": [
+            "1 day",
+            "5 days",
+            "1 week",
+            "1 month",
+            "2 months",
+            "6 months",
+            "Always"
+          ],
+          "description": "Make the Christmas button show up on a specific time before Christmas"
         }
       }
     },
@@ -76,12 +96,16 @@
     }
   },
   "scripts": {
-    "vscode:prepublish": "npm run compile",
     "compile": "tsc -p ./",
     "watch": "tsc -watch -p ./",
     "pretest": "npm run compile && npm run lint",
     "lint": "eslint src --ext ts",
-    "test": "node ./out/test/runTest.js"
+    "test": "node ./out/test/runTest.js",
+    "vscode:prepublish": "npm run esbuild-base -- --minify",
+    "esbuild-base": "esbuild ./src/extension.ts --bundle --outfile=out/main.js --external:vscode --format=cjs --platform=node",
+    "esbuild": "npm run esbuild-base -- --sourcemap",
+    "esbuild-watch": "npm run esbuild-base -- --sourcemap --watch",
+    "test-compile": "tsc -p ./"
   },
   "devDependencies": {
     "@types/mocha": "^10.0.3",
@@ -90,6 +114,7 @@
     "@typescript-eslint/eslint-plugin": "^6.9.0",
     "@typescript-eslint/parser": "^6.9.0",
     "@vscode/test-electron": "^2.3.6",
+    "esbuild": "^0.19.8",
     "eslint": "^8.52.0",
     "glob": "^10.3.10",
     "mocha": "^10.2.0",
