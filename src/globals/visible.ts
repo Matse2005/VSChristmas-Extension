@@ -1,5 +1,5 @@
 import * as christmas from './christmas';
-import * as globals from './globals.json';
+import { christmasDay, christmasMonth } from './christmasDate';
 import * as year from './year';
 
 type Duration = [string, number][];
@@ -34,7 +34,7 @@ function isBetweenDates(dateToCheck: Date, duration: string): boolean {
 
   const days = selectedDuration[1];
   const today = dateToCheck;
-  const christmasDate = new Date(today.getFullYear(), globals.christmas.month, globals.christmas.day); // Set Christmas date
+  const christmasDate = new Date(today.getFullYear(), christmasMonth, christmasDay); // Set Christmas date
 
   const startDate = new Date(christmasDate);
 
