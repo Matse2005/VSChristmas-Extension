@@ -19,11 +19,19 @@ This extension contributes the following settings:
 - `VSChristmas.toggleLargeStatusBarText`: Toggle the text beside the icon for the status bar icon.
 - `VSChristmas.StatusBarButtonVisibleTimeBeforeChistmas`: Make the Christmas button show up on a specific time before Christmas
 
-<!-- ## Known Issues
-
-Calling out known issues can help limit users opening duplicate issues against your extension. -->
-
 ## Release Notes
+
+### 0.1.1
+
+    - Fixed the broken time formats
+
+### 0.1.0
+
+    - Changed a few texts
+    - Made the emoji's change everytime
+    - Added a countdown panel
+    - Added a button to open the countdown panel
+    - Make the text change on and ater Christmas
 
 ### 0.0.8
 

@@ -7,7 +7,7 @@
     "url": "https://github.com/Matse2005/VSChristmas-Extension"
   },
   "version": "0.0.8",
-  "icon": "./assets/icon.png",
+  "icon": "./resources/images/icon.png",
   "author": {
     "name": "MatseVH"
   },
@@ -77,22 +77,22 @@
         "key": "ctrl+shift+c",
         "mac": "shift+cmd+c"
       }
-    ]
-  },
-  "commands": [
-    {
-      "command": "VSChristmas.daysLeft",
-      "title": "Days Until Christmas"
-    }
-  ],
-  "icons": {
-    "hat-santa": {
-      "description": "Santa Hat Icon",
-      "default": {
-        "fontPath": "assets/icon-font.woff",
-        "fontCharacter": "\\41"
+    ],
+    "icons": {
+      "santa-hat": {
+        "description": "Santa Hat Icon",
+        "default": {
+          "fontPath": "./assets/icon-font.woff",
+          "fontCharacter": "\\41"
+        }
       }
-    }
+    },
+    "commands": [
+      {
+        "command": "VSChristmas.daysLeft",
+        "title": "Days Until Christmas"
+      }
+    ]
   },
   "scripts": {
     "compile": "tsc -p ./",
