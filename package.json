@@ -83,7 +83,7 @@
         "description": "Santa Hat Icon",
         "default": {
           "fontPath": "./resources/icons/icons.woff",
-          "fontCharacter": "\\41"
+          "fontCharacter": "\\e800"
         }
       }
     },
