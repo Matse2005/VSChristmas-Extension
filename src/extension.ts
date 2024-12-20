@@ -5,14 +5,13 @@ import { ChristmasWebviewProvider } from './webview/ChristmasWebview';
 export function activate(context: vscode.ExtensionContext) {
   const statusBarManager = new StatusBarManager(context);
 
-  // Register the webview provider
-  const christmasWebviewProvider = new ChristmasWebviewProvider(context.extensionUri);
-  context.subscriptions.push(
-    vscode.window.registerWebviewViewProvider(
-      ChristmasWebviewProvider.viewType,
-      christmasWebviewProvider
-    )
-  );
+  // const christmasWebviewProvider = new ChristmasWebviewProvider(context.extensionUri);
+  // context.subscriptions.push(
+  //   vscode.window.registerWebviewViewProvider(
+  //     ChristmasWebviewProvider.viewType,
+  //     christmasWebviewProvider
+  //   )
+  // );
 
   setInterval(() => {
     statusBarManager.updateStatusBarText();
