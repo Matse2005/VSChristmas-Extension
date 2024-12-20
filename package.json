@@ -6,7 +6,7 @@
   "repository": {
     "url": "https://github.com/Matse2005/VSChristmas-Extension"
   },
-  "version": "0.2.0",
+  "version": "0.2.2",
   "icon": "./resources/images/icon.png",
   "author": {
     "name": "MatseVH"
@@ -82,7 +82,7 @@
       "santa-hat": {
         "description": "Santa Hat Icon",
         "default": {
-          "fontPath": "./assets/icon-font.woff",
+          "fontPath": "./resources/icons/icons.woff",
           "fontCharacter": "\\41"
         }
       }
