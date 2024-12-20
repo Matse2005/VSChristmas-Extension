@@ -23,7 +23,7 @@ export class ChristmasDaysCalculator {
 
     // Create Date objects for this year's and next year's Christmas
     const thisYearChristmas = new Date(today.getFullYear(), christmasMonth - 1, christmasDay);
-    thisYearChristmas.setHours(23, 59, 59, 59);
+    thisYearChristmas.setHours(0, 0, 0, 0);
 
     const nextYearChristmas = new Date(today.getFullYear() + 1, christmasMonth - 1, christmasDay);
     nextYearChristmas.setHours(0, 0, 0, 0);
@@ -45,6 +45,7 @@ export class ChristmasDaysCalculator {
       : Math.ceil((nextYearChristmas.getTime() - today.getTime()) / oneDay);
 
     // Calculate days since last Christmas
+    thisYearChristmas.setHours(23, 59, 59, 59)
     const daysSinceLast = today > thisYearChristmas
       ? Math.floor((today.getTime() - thisYearChristmas.getTime()) / oneDay + 1)
       : null;
