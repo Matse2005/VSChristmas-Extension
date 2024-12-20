@@ -92,7 +92,25 @@
         "command": "VSChristmas.daysLeft",
         "title": "Days Until Christmas"
       }
-    ]
+    ],
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "christmas-countdown",
+          "title": "Christmas Countdown",
+          "icon": "$(santa-hat)"
+        }
+      ]
+    },
+    "views": {
+      "christmas-countdown": [
+        {
+          "type": "webview",
+          "id": "christmas.countdown",
+          "name": "Christmas Countdown"
+        }
+      ]
+    }
   },
   "scripts": {
     "compile": "tsc -p ./",

@@ -90,6 +90,13 @@ export function daysLeft(): { command: vscode.Disposable, id: string } {
     }
 
     vscode.window.showInformationMessage(message);
+    vscode.window.showInformationMessage(message, 'Christmas Countdown')
+      .then(selection => {
+        if (selection === 'Christmas Countdown') {
+          // Focus the Christmas countdown view
+          vscode.commands.executeCommand('christmas.countdown.focus');
+        }
+      });
   });
 
   return {
