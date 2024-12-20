@@ -11,6 +11,16 @@ All notable changes to the "vschristmas-extension" extension will be documented 
 - v0.2 Countdown panel
 - v0.2 Tests
 
+## [0.2.4] - 2024-12-20
+
+### Fixed
+
+- The problem where the command returned the wrong days left
+
+### Removed
+
+- Countdown web view because wrong usage for the extension
+
 ## [0.2.3] - 2024-12-20
 
 ### Added
