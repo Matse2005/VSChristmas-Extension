@@ -6,13 +6,13 @@
   "repository": {
     "url": "https://github.com/Matse2005/VSChristmas-Extension"
   },
-  "version": "0.0.8",
+  "version": "0.2.0",
   "icon": "./resources/images/icon.png",
   "author": {
     "name": "MatseVH"
   },
   "engines": {
-    "vscode": "^1.84.0"
+    "vscode": "^1.96.0"
   },
   "categories": [
     "Other"

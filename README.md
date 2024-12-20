@@ -6,11 +6,6 @@
 - Status bar buttons to show the days until Christmas
 - Keybind `ctrl+shift+c` or `shift+cmd+c` on mac to show the days until Christmas
 
-<!--
-\!\[feature X\]\(images/feature-x.png\)
-
-> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow. -->
-
 ## Extension Settings
 
 This extension contributes the following settings:
@@ -18,20 +13,29 @@ This extension contributes the following settings:
 - `VSChristmas.StatusBarItemLocation`: Display the Christmas button at the location of your choice.
 - `VSChristmas.toggleLargeStatusBarText`: Toggle the text beside the icon for the status bar icon.
 - `VSChristmas.StatusBarButtonVisibleTimeBeforeChistmas`: Make the Christmas button show up on a specific time before Christmas
+- `VSChristmas.ChristmasDay`: The calendar day of christmas at your location.
+- `VSChristmas.ChristmasMonth`: The calendar month of christmas at your location.
 
 ## Release Notes
 
+### 0.2.0
+
+- Added lost code again
+- Added a realtime countdown in the statusBar
+- Removed the countdown panel, it will come back later and better
+- Added support for Christmas's on other dates, big thanks to [Jakob Handke (jhandke)](https://github.com/jhandke)
+
 ### 0.1.1
 
-    - Fixed the broken time formats
+- Fixed the broken time formats
 
 ### 0.1.0
 
-    - Changed a few texts
-    - Made the emoji's change everytime
-    - Added a countdown panel
-    - Added a button to open the countdown panel
-    - Make the text change on and ater Christmas
+- Changed a few texts
+- Made the emoji's change everytime
+- Added a countdown panel
+- Added a button to open the countdown panel
+- Make the text change on and ater Christmas
 
 ### 0.0.8
 
