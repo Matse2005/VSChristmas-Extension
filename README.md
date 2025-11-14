@@ -13,6 +13,7 @@ A VS Code extension that brings Christmas spirit to your editor by showing the c
 This extension contributes the following settings:
 
 - `VSChristmas.StatusBarItemLocation`: Display the Christmas button at the location of your choice
+- `VSChristmas.toggleSecondsInStatusBar`: Toggle the seconds in the status bar
 - `VSChristmas.toggleLargeStatusBarText`: Toggle the text beside the icon for the status bar icon
 - `VSChristmas.StatusBarButtonVisibleTimeBeforeChistmas`: Make the Christmas button show up on a specific time before Christmas
 - `VSChristmas.ChristmasDay`: The calendar day of Christmas at your location
@@ -70,7 +71,7 @@ We welcome contributions from the community! Here's how you can help:
    - Test the extension manually in a new VS Code window
    - Ensure settings and commands work as expected -->
 
-4. Submit a Pull Request:
+3. Submit a Pull Request:
    - Write a clear description of your changes
    - Reference any related issues
    <!-- - Update documentation if needed -->

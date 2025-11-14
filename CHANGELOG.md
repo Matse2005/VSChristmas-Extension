@@ -4,12 +4,26 @@ All notable changes to the "vschristmas-extension" extension will be documented 
 
 <!-- Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file. -->
 
-## [Unreleased]
+## [0.2.7] - 2025-11-14
+
+### Fixed
+
+- Updated this changelog
+- Updated the README.md
+
+### Removed
+
+- vsc-extension-quickstart.md
+
+## [0.2.6] - 2025-11-14
+
+### Modification
+
+- Modified the status bar counter to dynamically update
 
 ### Added
 
-- v0.2 Countdown panel
-- v0.2 Tests
+- Added a setting to remove the seconds from the status bar
 
 ## [0.2.5] - 2024-12-24
 
