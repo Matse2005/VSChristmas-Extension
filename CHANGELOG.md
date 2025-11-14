@@ -11,6 +11,12 @@ All notable changes to the "vschristmas-extension" extension will be documented 
 - v0.2 Countdown panel
 - v0.2 Tests
 
+## [0.2.5] - 2024-12-24
+
+### Fixed
+
+- Fixed settings update
+
 ## [0.2.4] - 2024-12-20
 
 ### Fixed

@@ -6,7 +6,7 @@
   "repository": {
     "url": "https://github.com/Matse2005/VSChristmas-Extension"
   },
-  "version": "0.2.3",
+  "version": "0.2.5",
   "icon": "./resources/images/icon.png",
   "author": {
     "name": "MatseVH"
@@ -25,6 +25,11 @@
     "configuration": {
       "title": "VSChristmas",
       "properties": {
+        "VSChristmas.toggleSecondsInStatusBar": {
+          "type": "boolean",
+          "default": true,
+          "description": "Toggle the seconds in the status bar."
+        },
         "VSChristmas.toggleLargeStatusBarText": {
           "type": "boolean",
           "default": true,

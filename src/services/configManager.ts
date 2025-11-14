@@ -7,6 +7,10 @@ export class ConfigManager {
     return this.getConfiguration('StatusBarItemLocation', 'Both');
   }
 
+  isSecondsEnabled(): boolean {
+    return this.getConfiguration('toggleSecondsInStatusBar', true);
+  }
+
   isLargeTextEnabled(): boolean {
     return this.getConfiguration('toggleLargeStatusBarText', true);
   }

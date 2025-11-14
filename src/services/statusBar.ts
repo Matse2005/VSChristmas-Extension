@@ -50,7 +50,7 @@ export class StatusBarManager {
     return statusBar;
   }
 
-  private updateStatusBarSettings(): void {
+  public updateStatusBarSettings(): void {
     const location = this.configManager.getStatusBarLocation();
     const beforeChristmas = this.configManager.getVisibleTimeBeforeChristmas();
 
