@@ -1,12 +1,12 @@
 {
   "name": "vschristmas-extension",
   "displayName": "VSChristmas-Extension",
-  "description": "Funny Christmas features in your VSCode",
+  "description": "A VS Code extension that brings Christmas spirit to your editor by showing the countdown to Christmas.",
   "publisher": "MatseVH",
   "repository": {
     "url": "https://github.com/Matse2005/VSChristmas-Extension"
   },
-  "version": "0.2.7",
+  "version": "0.2.8",
   "icon": "./resources/images/icon.png",
   "author": {
     "name": "MatseVH"

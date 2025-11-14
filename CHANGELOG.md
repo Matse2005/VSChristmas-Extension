@@ -4,6 +4,12 @@ All notable changes to the "vschristmas-extension" extension will be documented 
 
 <!-- Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file. -->
 
+## [0.2.8] - 2025-11-14
+
+### Fixed
+
+- Updated dependencies
+
 ## [0.2.7] - 2025-11-14
 
 ### Fixed
