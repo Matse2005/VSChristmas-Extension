@@ -3,11 +3,13 @@ import { daysLeft } from '../commands/daysLeft';
 import { ConfigManager } from './configManager';
 import * as statusbar from '../utils/visible';
 import { ChristmasCountdownCalculator } from './christmasCountdownCalculator';
+import { shortcutMoved } from '../commands/shortcutMoved';
 
 export class StatusBarManager {
   private statusBarRight!: vscode.StatusBarItem;
   private statusBarLeft!: vscode.StatusBarItem;
   private daysLeftCommand!: { command: vscode.Disposable; id: string };
+  private shortcutMovedCommand!: { command: vscode.Disposable; id: string }
   private configManager: ConfigManager;
   private calculator: ChristmasCountdownCalculator;
   private readonly loadingStatusBarText: string = "$(loading~spin) VSChirstmas is starting"
@@ -16,6 +18,7 @@ export class StatusBarManager {
   constructor(private context: vscode.ExtensionContext) {
     this.configManager = new ConfigManager();
     this.daysLeftCommand = daysLeft();
+    this.shortcutMovedCommand = shortcutMoved();
     this.calculator = new ChristmasCountdownCalculator()
     this.initialize();
   }

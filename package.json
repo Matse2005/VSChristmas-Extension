@@ -79,8 +79,13 @@
     "keybindings": [
       {
         "command": "VSChristmas.daysLeft",
+        "key": "ctrl+alt+c",
+        "mac": "cmd+alt+c"
+      },
+      {
+        "command": "VSChristmas.shortcutMoved",
         "key": "ctrl+shift+c",
-        "mac": "shift+cmd+c"
+        "mac": "cmd+shift+c"
       }
     ],
     "icons": {
@@ -96,6 +101,10 @@
       {
         "command": "VSChristmas.daysLeft",
         "title": "Days Until Christmas"
+      },
+      {
+        "command": "VSChristmas.shortcutMoved",
+        "title": "Explains that a keyboard shortcut has been moved"
       }
     ]
   },
