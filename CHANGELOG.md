@@ -4,6 +4,20 @@ All notable changes to the "vschristmas-extension" extension will be documented 
 
 <!-- Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file. -->
 
+## [0.2.9] - 2025-12-06
+
+### Modification
+
+- Changed the shortcuts for getting the christmas countdown from `ctrl` + `shift` + `c` and `cmd` + `shift` + `c` to `ctrl` + `alt` + `c` and `cmd` + `alt` + `c`
+
+### Added
+
+- A message when you use the old keyboard shortcut to explain what changed
+
+### Fixed
+
+- Updated dependencies
+
 ## [0.2.8] - 2025-11-14
 
 ### Fixed

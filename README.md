@@ -6,7 +6,7 @@ A VS Code extension that brings Christmas spirit to your editor by showing the c
 
 - `Days Until Christmas` Command to check the countdown
 - Status bar buttons showing days until Christmas
-- Keybind `ctrl+shift+c` (Windows/Linux) or `shift+cmd+c` (Mac) to show the days until Christmas
+- Keybind `ctrl+alt+c` (Windows/Linux) or `shift+alt+c` (Mac) to show the days until Christmas
 
 ## Extension Settings
 
