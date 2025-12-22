@@ -123,7 +123,7 @@
   "devDependencies": {
     "@types/mocha": "^10.0.10",
     "@types/node": "24.x",
-    "@types/vscode": "^1.106.1",
+    "@types/vscode": "^1.107.0",
     "@typescript-eslint/eslint-plugin": "^8.48.1",
     "@typescript-eslint/parser": "^8.48.0",
     "@vscode/test-electron": "^2.4.1",
